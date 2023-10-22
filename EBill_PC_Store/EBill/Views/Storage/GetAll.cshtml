@@ -1,0 +1,37 @@
+﻿@model IEnumerable<EBill.Models.Domain.Storage>
+@{
+}
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-dark" href="/Storage/Add">Add more</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Storages</h3>
+
+            <table  class="table table-stripped table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model){
+                    <tr>
+                        <td>@item.StorageName</td>
+                        <td>
+                                <a class="btn btn-success" href="/Storage/Update?id=@item.Id"><i class="bi bi-pen"></i> Edit</a> |
+                                <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Storage/Delete?id=@item.Id"><i class="bi bi-trash"></i> Delete</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EBill.Models.Domain.Bill>
+@{
+}
+
+<div class="container pt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-dark" href="/Bill/Add">+ Add more</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Bills</h3>
+
+            <table  class="table table-stripped table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Email Id</th>
+                        <th>Address</th>
+                        <th>Phone No</th>
+                        <th>Model</th>
+                        <th>Storage</th>
+                        <th>Warranty</th>
+                        <th>Purchase Date</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model){
+                    <tr>
+                            <td>@item.customerName</td>
+                            <td>@item.EmailId</td>
+                            <td>@item.Address</td>
+                            <td>@item.Phone</td>
+                            <td>@item.ModelName</td>
+                            <td>@item.StorageName</td>
+                            <td>@item.WarrantyName</td>
+                            <td>@item.Date.ToString("yyyy-MM-dd")</td>
+                            <td>@item.Price</td>
+                        <td>
+                                <a class="btn btn-success" href="/Bill/Update?id=@item.Id"><i class="bi bi-pen"></i></a> |
+                                <a class="btn btn-danger" onclick="return window.confirm('Are you sure?')" href="/Bill/Delete?id=@item.Id"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

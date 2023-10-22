@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        a{
+            font-family:Verdana, Geneva, Tahoma, sans-serif
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a style="margin-left:2%" class="navbar-brand" href="#"> PC Store</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href="/Model/Add" class="nav-link">Model</a>
+            </li>
+            <li class="nav-item">
+                <a href="/Storage/Add" class="nav-link">Storage</a>
+            </li>
+            <li class="nav-item active">
+                <a href="/Warranty/Add" class="nav-link">Warranty</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="/Bill/Add" class="nav-link">Bill</a>
+            </li>
+        </ul>
+        <partial name="_LoginPartial"/>
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
