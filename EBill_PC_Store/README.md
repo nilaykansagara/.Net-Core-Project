@@ -22,7 +22,7 @@ This is a .NET Core MVC project for generating electronic bills (eBills) targete
 
 1. Clone the repository:
 
-git clone https://github.com/your-username/eBill-Generator.git
+git clone https://github.com/nilaykansagara/.Net-Core-Project
    
   
 2. Open the project in your preferred IDE (Visual Studio or Visual Studio Code).
